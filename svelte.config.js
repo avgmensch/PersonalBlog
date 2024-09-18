@@ -14,8 +14,13 @@ const config = {
 			assets: 'build',
 			fallback: undefined,
 			precompress: false,
-			strict: true
-		})
+			strict: true,
+			fallback: '404.html'
+		}),
+		paths: {
+			// For process.env.BASE_PATH see .github/workflows/deploy.yml
+			base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
+		}
 	}
 };
 
